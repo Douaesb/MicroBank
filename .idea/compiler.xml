@@ -7,9 +7,9 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="config-service" />
         <module name="discovery-service" />
         <module name="gateway-service" />
+        <module name="service" />
       </profile>
       <profile name="Annotation profile for account" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
@@ -30,6 +30,7 @@
       <module name="customer-service" target="17" />
       <module name="discovery-service" target="17" />
       <module name="gateway-service" target="17" />
+      <module name="service" target="17" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
@@ -39,6 +40,7 @@
       <module name="customer-service" options="-parameters" />
       <module name="discovery-service" options="-parameters" />
       <module name="gateway-service" options="-parameters" />
+      <module name="service" options="-parameters" />
     </option>
   </component>
 </project>
