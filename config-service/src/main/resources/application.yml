@@ -8,9 +8,5 @@ spring:
         git:
           uri: https://github.com/Douaesb/MicroBank.git
           search-paths:
-            - "customer-service"
-            - "account-service"
-            - "gateway-service"
-            - "discovery-service"
-            - "config-service"
+            - centralized-config
           clone-on-start: true
