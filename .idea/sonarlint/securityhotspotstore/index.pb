@@ -59,3 +59,5 @@ Lcustomer-service/src/main/java/com/service/customer/CustomerApplication.java,6
 Odiscovery-service/src/main/java/com/service/discovery/DiscoveryApplication.java,5\3\5377b67840c8e662929228a18e6d564747e391ea
 y
 Iaccount-service/src/main/java/com/service/account/AccountApplication.java,1\4\1450d1290770881a3403a146d563c30ab28e544d
+U
+%centralized-config/config-service.yml,0\a\0a9d4255e34ef7eabff8982885d20a0009ab0604
