@@ -17,12 +17,3 @@ spring:
           uri: lb://ACCOUNT-SERVICE
           predicates:
             - Path=/accounts/**
-management:
-  endpoints:
-    web:
-      exposure:
-        include: refresh
-eureka:
-  client:
-    service-url:
-      defaultZone: http://localhost:8761/eureka/

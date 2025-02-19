@@ -1,16 +1,4 @@
-server:
-  port: 0  # Allows each service to pick a random port
-
 spring:
-  application:
-    name: global-config 
-
-  datasource:
-    url: jdbc:postgresql://localhost:5432/microbank
-    username: postgres
-    password: password
-    driver-class-name: org.postgresql.Driver
-
   jpa:
     hibernate:
       ddl-auto: update

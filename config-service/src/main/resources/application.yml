@@ -7,6 +7,3 @@ spring:
       server:
         git:
           uri: https://github.com/Douaesb/MicroBank.git
-          search-paths:
-            - centralized-config
-          clone-on-start: true
