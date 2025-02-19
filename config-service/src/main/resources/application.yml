@@ -2,9 +2,10 @@ server:
   port: 8888
 
 spring:
+  application:
+    name: config-service
   cloud:
     config:
       server:
         git:
-          uri: https://github.com/Douaesb/MicroBank.git
-          search-paths: centralized-config
+          uri: https://github.com/Douaesb/MicroBank_Config.git
