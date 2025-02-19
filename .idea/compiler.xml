@@ -10,6 +10,8 @@
         <module name="discovery-service" />
         <module name="gateway-service" />
         <module name="service" />
+        <module name="gateway" />
+        <module name="discovery" />
       </profile>
       <profile name="Annotation profile for account" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
@@ -22,23 +24,33 @@
         </processorPath>
         <module name="account-service" />
         <module name="customer-service" />
+        <module name="account" />
+        <module name="customer" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="account" target="17" />
       <module name="account-service" target="17" />
       <module name="config-service" target="17" />
+      <module name="customer" target="17" />
       <module name="customer-service" target="17" />
+      <module name="discovery" target="17" />
       <module name="discovery-service" target="17" />
+      <module name="gateway" target="17" />
       <module name="gateway-service" target="17" />
       <module name="service" target="17" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="account" options="-parameters" />
       <module name="account-service" options="-parameters" />
       <module name="config-service" options="-parameters" />
+      <module name="customer" options="-parameters" />
       <module name="customer-service" options="-parameters" />
+      <module name="discovery" options="-parameters" />
       <module name="discovery-service" options="-parameters" />
+      <module name="gateway" options="-parameters" />
       <module name="gateway-service" options="-parameters" />
       <module name="service" options="-parameters" />
     </option>

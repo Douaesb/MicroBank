@@ -3,9 +3,13 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/MicroBank.iml" filepath="$PROJECT_DIR$/.idea/MicroBank.iml" />
+      <module fileurl="file://$PROJECT_DIR$/account-service/account.iml" filepath="$PROJECT_DIR$/account-service/account.iml" />
       <module fileurl="file://$PROJECT_DIR$/account/account-service.iml" filepath="$PROJECT_DIR$/account/account-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/customer-service/customer.iml" filepath="$PROJECT_DIR$/customer-service/customer.iml" />
       <module fileurl="file://$PROJECT_DIR$/customer/customer-service.iml" filepath="$PROJECT_DIR$/customer/customer-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/discovery-service/discovery.iml" filepath="$PROJECT_DIR$/discovery-service/discovery.iml" />
       <module fileurl="file://$PROJECT_DIR$/discovery/discovery-service.iml" filepath="$PROJECT_DIR$/discovery/discovery-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/gateway-service/gateway.iml" filepath="$PROJECT_DIR$/gateway-service/gateway.iml" />
       <module fileurl="file://$PROJECT_DIR$/gateway/gateway-service.iml" filepath="$PROJECT_DIR$/gateway/gateway-service.iml" />
       <module fileurl="file://$PROJECT_DIR$/config-service/service.iml" filepath="$PROJECT_DIR$/config-service/service.iml" />
     </modules>

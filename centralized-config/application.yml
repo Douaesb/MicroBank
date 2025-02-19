@@ -1,0 +1,29 @@
+server:
+  port: 0  # Allows each service to pick a random port
+
+spring:
+  application:
+    name: global-config 
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/microbank
+    username: postgres
+    password: password
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+  logging:
+    level:
+      root: INFO
+      org.springframework: DEBUG
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    prefer-ip-address: true
