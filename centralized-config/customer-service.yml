@@ -3,7 +3,7 @@ server:
 
 spring:
   application:
-    name: CUSTOMER-SERVICE
+    name: customer-service
 
   datasource:
     url: jdbc:postgresql://localhost:5432/customerdb
