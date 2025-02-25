@@ -1,25 +1,34 @@
-## **MicroBank - A Microservices-Based Banking Application** 🚀
+# **MicroBank - A Microservices-Based Banking Application** 🚀
 
 ### **📌 Overview**
-MicroBank is a **microservices-based banking backend application** that manages clients and their bank accounts (checking and savings). The system provides REST APIs for client and account management, leveraging **Spring Cloud** for scalability and flexibility.
+MicroBank is a **full-stack microservices-based banking application** that enables client and account management. The **backend** follows a **Spring Boot microservices architecture**, while the **frontend** is built with **React.js and TypeScript**, providing a seamless user experience.  
 
 ---
 
 ## **🛠️ Tech Stack**
-- **Backend**: Spring Boot, Spring Data JPA
-- **Microservices**: Spring Cloud (Eureka, Config, Gateway)
-- **Database**: PostgreSQL
-- **Inter-Service Communication**: RestTemplate
-- **Configuration Management**: Spring Cloud Config
-- **API Gateway**: Spring Cloud Gateway
-- **Service Discovery**: Eureka
-- **Version Control**: Git + GitHub
-- **Build & Dependency Management**: Maven
+### **🔹 Backend**
+- **Spring Boot** (Microservices Development)
+- **Spring Data JPA** (Database Access)
+- **Spring Cloud** (Eureka, Config, Gateway)
+- **PostgreSQL** (Relational Database)
+- **RestTemplate** (Inter-Service Communication)
+- **Spring Cloud Config** (Configuration Management)
+- **Spring Cloud Gateway** (API Gateway)
+- **Eureka Service Discovery**
+- **Maven** (Dependency & Build Management)
+
+### **🔹 Frontend**
+- **React.js** (UI Development)
+- **TypeScript** (Strict Typing)
+- **React Router** (Navigation & Routing)
+- **Axios** (API Communication)
+- **Material-UI** (UI Components)
+- **Vite** (Bundler for Fast Development)
 
 ---
 
 ## **📌 Microservices Architecture**
-The application consists of the following microservices:
+The backend consists of several microservices:
 
 | Microservice         | Port  | Responsibility |
 |----------------------|------|---------------|
@@ -29,10 +38,12 @@ The application consists of the following microservices:
 | **Customer Service** (`customer-service`) | `8081` | Manages clients (CRUD operations) |
 | **Account Service** (`account-service`) | `8082` | Manages bank accounts for clients |
 
+The frontend is a **Single Page Application (SPA)** that communicates with the backend via the **API Gateway**.
+
 ---
 
 ## **📁 Project Structure**
-
+### **🔹 Backend Structure**
 ```bash
 MicroBank/
 │── centralized-config/   # Centralized Configurations in Git
@@ -41,7 +52,35 @@ MicroBank/
 │── gateway-service/      # API Gateway
 │── customer-service/     # Customer Management Service
 │── account-service/      # Account Management Service
-└── README.md             # Documentation
+│── README.md             # Documentation
+```
+
+### **🔹 Frontend Structure**
+```bash
+bank-frontend/
+│── public/                # Static files (favicon, index.html, etc.)
+│── src/                   # Source code
+│   ├── api/               # API service files
+│   │   ├── accountApi.ts  # Account API requests
+│   │   ├── customerApi.ts # Customer API requests
+│   │   ├── axiosInstance.ts # Axios global configuration
+│   ├── components/        # Reusable UI components
+│   │   ├── Navbar.tsx     # Navigation bar
+│   │   ├── AccountCard.tsx # Account card UI
+│   │   ├── ClientForm.tsx # Client form component
+│   ├── pages/             # Page components
+│   │   ├── Dashboard.tsx  # Dashboard page
+│   │   ├── AccountManagement.tsx # Account management page
+│   │   ├── ClientManagement.tsx  # Client management page
+│   │   ├── AccountDetails.tsx  # Account details page
+│   │   ├── ClientDetails.tsx  # Client details page
+│   ├── types/             # TypeScript type definitions
+│   │   ├── account.ts     # Account type definitions
+│   │   ├── client.ts      # Client type definitions
+│   │   ├── theme.ts       # Theme settings (if applicable)
+│── package.json           # Project dependencies & scripts
+│── tsconfig.json          # TypeScript configuration
+│── README.md              # Project documentation
 ```
 
 ---
@@ -54,6 +93,9 @@ git clone https://github.com/Douaesb/MicroBank.git
 cd MicroBank
 ```
 
+---
+
+## **🔹 Backend Setup**
 ### **2️⃣ Start the Config Server**
 ```bash
 cd config-service
@@ -92,7 +134,7 @@ cd account-service
 mvn spring-boot:run
 ```
 
-### **6️⃣ Verify Everything is Running**
+### **6️⃣ Verify Backend APIs**
 Test API endpoints:
 - **Get all customers:**
   ```
@@ -105,26 +147,46 @@ Test API endpoints:
 
 ---
 
-## **📑 Configuration Management**
-
-All configuration files are stored in **centralized-config** (Git repository).
-
-Structure:
-```
-centralized-config/
-│── customer-service.yml
-│── account-service.yml
-│── gateway-service.yml
-│── discovery-service.yml
-│── config-service.yml
+## **🔹 Frontend Setup**
+### **7️⃣ Navigate to the Frontend Folder**
+```bash
+cd bank-frontend
 ```
 
-Each service **fetches its config from** the **Spring Cloud Config Server** (`http://localhost:8888`).
+### **8️⃣ Install Dependencies**
+```bash
+npm install
+```
+
+### **9️⃣ Start the Development Server**
+```bash
+npm run dev
+```
+
+### **🔟 Open in Browser**
+```
+http://localhost:5173
+```
 
 ---
 
-## **📌 API Endpoints**
+## **📡 API Configuration (Frontend)**
+- The frontend interacts with the backend (`gateway-service`) using Axios.
+- Configure the **base URL** in `axiosInstance.ts`:
+```ts
+import axios from 'axios';
 
+const api = axios.create({
+  baseURL: 'http://localhost:8080',
+  headers: { 'Content-Type': 'application/json' }
+});
+
+export default api;
+```
+
+---
+
+## **📑 API Endpoints**
 ### **Customer Service** (`http://localhost:8081`)
 | Method | Endpoint         | Description  |
 |--------|----------------|--------------|
@@ -141,24 +203,31 @@ Each service **fetches its config from** the **Spring Cloud Config Server** (`ht
 
 ---
 
-## **🛠️ Best Practices & Considerations**
-
-✔ **Centralized Configuration**: All configs are managed via `config-service`.  
-✔ **Service Discovery**: All services register with Eureka for automatic discovery.  
-✔ **API Gateway**: Handles authentication, logging, and routing for external requests.  
+## **🎯 Features**
+### **🔹 Backend**
+✔ **Centralized Configuration**: Managed via `config-service`.  
+✔ **Service Discovery**: Eureka for automatic discovery.  
+✔ **API Gateway**: Handles authentication, logging, and routing.  
 ✔ **Decoupled Services**: Each service has its own database and logic.  
-✔ **Resilience**: Can integrate **Circuit Breakers** (e.g., Resilience4J) for fault tolerance.
+✔ **Resilience**: Can integrate **Circuit Breakers** (e.g., Resilience4J).  
+
+### **🔹 Frontend**
+✔ **Dashboard**: Overview of clients and accounts  
+✔ **Client & Account Management**: Add, edit, and view data  
+✔ **Form Validation**: User-friendly input validation  
+✔ **Routing**: Smooth navigation with React Router  
+✔ **State Management**: Context API (or Redux in future)  
 
 ---
 
 ## **📜 License**
-This project is licensed under the **MIT License**
+This project is licensed under the **MIT License**.
 
+---
 
-## Contact
-
+## **📞 Contact**
 For any questions or suggestions, please contact:
 
-- **Name:** Douae Sebti
-- **Email:** [douae.sb411@gmail.com](mailto:douae.sb411@gmail.com)
-- **GitHub:** [Douaesb](https://github.com/Douaesb)
+- **Name:** Douae Sebti  
+- **Email:** [douae.sb411@gmail.com](mailto:douae.sb411@gmail.com)  
+- **GitHub:** [Douaesb](https://github.com/Douaesb)  
