@@ -6,6 +6,8 @@ spring:
     name: gateway-service
 
   cloud:
+    config:
+      enabled: false
     gateway:
       routes:
         - id: customer-service
@@ -17,3 +19,22 @@ spring:
           uri: lb://ACCOUNT-SERVICE
           predicates:
             - Path=/accounts/**
+      globalcors:
+        cors-configurations:
+          '[/**]':
+            allowedOrigins: "http://localhost:3000"
+            allowedMethods:
+              - GET
+              - POST
+              - PUT
+              - DELETE
+              - OPTIONS
+            allowedHeaders: "*"
+            allowCredentials: true
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+    fetch-registry: true
+    register-with-eureka: true
