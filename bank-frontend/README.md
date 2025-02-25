@@ -1,46 +1,113 @@
-# Getting Started with Create React App
+# **Bank Frontend**  
+🚀 **Single Page Application (SPA) for Banking System**  
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is a React.js + TypeScript frontend for managing bank clients and accounts. It communicates with the backend via API calls to the `gateway-service`.  
 
-## Available Scripts
+## **📌 Features**  
 
-In the project directory, you can run:
+✅ **Dashboard**: Overview of clients and accounts  
+✅ **Client Management**: Add, edit, and view client details  
+✅ **Account Management**: Open, update, and view bank accounts  
+✅ **API Integration**: Fetch and manage data via `Axios`  
+✅ **Form Validation**: User-friendly input validation and error handling  
+✅ **Routing**: Smooth navigation using React Router  
 
-### `npm start`
+---
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## **🛠️ Tech Stack**  
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+| Technology        | Description                           |
+|------------------|-----------------------------------|
+| **React.js**      | Frontend framework                |
+| **TypeScript**    | Strongly typed JavaScript        |
+| **React Router**  | Navigation and routing management |
+| **Axios**         | API communication tool            |
+| **Material-UI** _(optional)_ | UI design framework          |
 
-### `npm test`
+---
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## **📂 Project Structure**  
 
-### `npm run build`
+```
+bank-frontend/
+│── public/                # Static files (favicon, index.html, etc.)
+│── src/                   # Source code
+│   ├── api/               # API service files
+│   │   ├── accountApi.ts  # Account API requests
+│   │   ├── customerApi.ts # Customer API requests
+│   │   ├── axiosInstance.ts # Axios global configuration
+│   ├── components/        # Reusable UI components
+│   │   ├── Navbar.tsx     # Navigation bar
+│   │   ├── AccountCard.tsx # Account card UI
+│   │   ├── ClientForm.tsx # Client form component
+│   ├── pages/             # Page components
+│   │   ├── Dashboard.tsx  # Dashboard page
+│   │   ├── AccountManagement.tsx # Account management page
+│   │   ├── ClientManagement.tsx  # Client management page
+│   │   ├── AccountDetails.tsx  # Account details page
+│   │   ├── ClientDetails.tsx  # Client details page
+│   ├── types/             # TypeScript type definitions
+│   │   ├── account.ts     # Account type definitions
+│   │   ├── client.ts      # Client type definitions
+│   │   ├── theme.ts       # Theme settings (if applicable)
+│── package.json           # Project dependencies & scripts
+│── tsconfig.json          # TypeScript configuration
+│── README.md              # Project documentation
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+---
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## **⚙️ Installation & Setup**  
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1️⃣ Clone the repository  
+```sh
+git clone https://github.com/Douaesb/bank-frontend.git
+cd bank-frontend
+```
 
-### `npm run eject`
+2️⃣ Install dependencies  
+```sh
+npm install
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+3️⃣ Start the development server  
+```sh
+npm run dev
+```
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+4️⃣ Open in browser  
+```
+http://localhost:5173
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+---
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## **📡 API Configuration**  
 
-## Learn More
+- The frontend interacts with the backend (`gateway-service`) using Axios.  
+- Configure the **base URL** in `axiosInstance.ts`:  
+```ts
+import axios from 'axios';
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+const api = axios.create({
+  baseURL: 'http://localhost:8080', 
+  headers: { 'Content-Type': 'application/json' }
+});
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+export default api;
+```
+
+---
+
+## **📜 License**
+This project is licensed under the **MIT License**
+
+
+## Contact
+
+For any questions or suggestions, please contact:
+
+- **Name:** Douae Sebti
+- **Email:** [douae.sb411@gmail.com](mailto:douae.sb411@gmail.com)
+- **GitHub:** [Douaesb](https://github.com/Douaesb)
+
